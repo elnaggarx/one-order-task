@@ -1,0 +1,135 @@
+/*STYLESHEET FOR CART AND PRODUCTINCART COMPONENTS       */
+
+/*CART DIV*/
+/*POSITION SET TO ABSOULTE AND POSITIONED AT THE TOP RIGHT CORNER TAKING THE FULL HEIGHT OF THE CONTENT IN PAGE
+AND 25% OF THE VIEW WIDTH */
+/*NOTE : THE PARENT ELEMENT (MAIN) IS SET TO RELEVANT*/
+.cart{
+    position: absolute;
+    right: 0;
+    top:0;
+    z-index: 10;
+    width: 25vw;
+    height: 100%;
+    background-color: white;
+    border-left: solid 2px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*UNUSED CLASS*/
+.hide-cart{
+    display: hidden;
+}
+
+/* CONTAINER FOR CART TITLE AND CLEAR BUTTON */
+/*SET TO FLEX-ROW*/
+.title-flex-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+
+/*TITLE TEXT BOLDER*/
+.title-flex-container h1{
+    font-weight: 800;
+}
+
+/*CLEAR BUTTON DIMENSIONS AND LETTERSPACING MODIFIED  */
+.clear-button{
+
+    width: 27%;
+    height: 2.3rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+
+/*PURCHASE BUTTON DIMENSIONS AND LETTERSPACING MODIFIED  */
+.purchase-button{
+
+    width: 78%;
+    height: 2.8rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/*FLEX CONTAINER FOR ALL THE PRODUCTS IN CART*/
+/*SET TO BE FLEX-COL*/
+.items-flex{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    padding-bottom: 1.5rem;
+
+}
+
+/*FLEX CONTAINER FOR EACH SINGLE PRODUCT IN CART*/
+/*FLEX-ROW*/
+.item-flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 88%;
+    align-items: center;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    margin-left: 0.7rem;
+
+}
+
+/*A FLEX ELEMENT THAT HAS THE PRODUCT NUMBER AND PRICE*/
+.item-min-flex-col{
+    line-height: 10px;
+    width: fit-content;
+    margin-left: 1rem;
+}
+/*PRODUCT NUMBER TEXT*/
+.cart-pn{
+    font-weight: 600;
+}
+/*CAHNGING THE FONT-FAMILY AND THE FONT-WEIGHT OF THE SPAN HOLDING THE NUMBER ISNIDE THE CART-PN  */ 
+.cart-pn span{
+    font-family: sans-serif;
+    font-weight: 500;
+}
+/* PRODUCT PRICE TEXT */
+.cart-pp{
+    font-family: sans-serif;
+
+}
+/*FLEX CONTAINER FOR QUANTITY ,PLUS,MINUS BUTTONS*/
+.add-remove-flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    margin-top: 10%;
+}
+
+.add-button , .minus-button{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+/*IMAGE OF PRODUCTS IN CART*/
+/*ADJUSTING DIMENSIONS AND OBJECT-FIT TO FILL */
+.cart-image{
+    width: 80px;
+    height: 85px;
+    object-fit: fill;
+    border: solid 2px black;
+}
+@media (max-width: 768px){
+    .cart{
+        width: 100vw;
+        height: 91vh;
+        overflow-y: hidden;
+
+    }
+}

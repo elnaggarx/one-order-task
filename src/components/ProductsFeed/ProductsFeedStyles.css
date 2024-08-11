@@ -1,0 +1,64 @@
+/* STYLESHEET FOR PRODUCTSFEED COMPONENT */
+
+/*SETTING THE PADDING AND Z-INDEX OF THE COMPONENT DIV*/
+.products-feed{
+    padding: 2rem 0;
+    z-index: 5;
+}
+/*PRODUCTS FEED CLASSNAME IN CASE IF THE CART IS OPENED*/
+/*RE-ADJUSTING THE WIDTH ONLY*/
+.minimize-pf{
+    width: 70vw;
+    padding: 2rem 0;
+    z-index: 5;
+}
+
+/*  GRID CONTAINER FOR PRODUCTS */
+/* 4 COLS AND 2 ROWS*/
+.grid-container{
+    display: grid;
+    padding: 0 1rem;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 2.2rem 1rem;
+    justify-content:space-around;
+    
+}
+
+/*MEDIA QUERY*/
+
+
+/*MOBILE*/
+@media (max-width: 768px){
+    /*GRID TAKING ONLY ONE COL*/
+    .grid-container{
+        display: grid;
+        padding: 0 1rem;
+        grid-template-columns: repeat(1,1fr);
+        gap: 1.3rem 1rem;
+        justify-content:space-around;
+        
+    }
+    /*DISPLAYING NONE OF THE PRODUCTSFEED COMPONENT WHEN THE CART IS OPENED */
+    .minimize-pf{
+        display: none;
+    }
+    .products-feed{
+        padding: 2rem 0;
+        height: fit-content;
+    
+    }
+}
+/*TABLETS AND IPADS*/
+@media (min-width: 768px) and (max-width:1023px){
+    /*GRID WITH 2 COLS*/
+    .grid-container{
+        display: grid;
+        padding: 0 1rem;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1.3rem 1rem;
+        justify-content:space-around;
+        
+    }
+
+}

@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header/Header";
+import { useEffect, useState } from "react";
+import ProductsFeed from "./components/ProductsFeed/ProductsFeed";
+import Cart from "./components/Cart/Cart";
 
 function App() {
+  const [products,setProducts] = useState(null);
+  const [openCart , setOpenCart] =useState(false);
+  const handleOpenCart=()=>{
+    setOpenCart(!openCart);
+  }
+  useEffect(()=>{
+    fetch("https://fakestoreapi.com/products").then((res)=>res.json()).then((data)=>setProducts(data));
+     
+ },[])
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header handleOpenCart={handleOpenCart} ></Header>
+        <main className="main-content">
+            <ProductsFeed products={products} openCart={openCart}></ProductsFeed>
+            {openCart && <Cart ></Cart>}
+        </main>
     </div>
   );
 }
